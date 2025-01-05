@@ -1,5 +1,5 @@
 # Unto Deepest Depths Shader
-This is the shader code used for [Unto Deepest Depths](https://store.steampowered.com/app/3106600/?utm_source=github), provided with a sample application so you can play around with the parameters.
+This is the shader code used for [Unto Deepest Depths](https://store.steampowered.com/app/3106600/?utm_source=github), provided with a sample application so you can play around with the parameters. It has been tested with Godot 4.2.
 
 ## Usage
 To use the shader in your own project:
