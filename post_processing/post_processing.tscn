@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://xbfbno5cpncq"]
+
+[ext_resource type="Shader" path="res://post_processing/shader.gdshader" id="1_j7efq"]
+[ext_resource type="Script" path="res://post_processing/post_processing.gd" id="1_jolaa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xojws"]
+shader = ExtResource("1_j7efq")
+shader_parameter/scanline_count = 90
+shader_parameter/scanline_strength = 0.1
+shader_parameter/aberration_amount = 0.2
+shader_parameter/aberration_mult = 0.002
+shader_parameter/vignette_size = 0.3
+shader_parameter/vignette_opacity = 0.4
+shader_parameter/vignette_mult = 15.0
+shader_parameter/noise_intensity = 0.025
+shader_parameter/glow_strength = 1.0
+shader_parameter/glow_radius = 1
+shader_parameter/glow_threshold = 0.4
+
+[node name="post_processing" type="CanvasLayer"]
+layer = 128
+script = ExtResource("1_jolaa")
+
+[node name="shader_rect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_xojws")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

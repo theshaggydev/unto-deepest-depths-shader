@@ -1,0 +1,141 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvn7krgrat431"]
+
+[ext_resource type="Script" path="res://sample_scene/sample_scene.gd" id="1_ag6m0"]
+[ext_resource type="Texture2D" uid="uid://cadb1t7npgfk8" path="res://sample_scene/background1.png" id="1_hjrhh"]
+[ext_resource type="Texture2D" uid="uid://b44p7bka6vlgu" path="res://sample_scene/knight.png" id="2_kcrlb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwidi"]
+atlas = ExtResource("2_kcrlb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us6t3"]
+atlas = ExtResource("2_kcrlb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_boahu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwidi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us6t3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="sample_scene" type="Node2D"]
+script = ExtResource("1_ag6m0")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_hjrhh")
+centered = false
+
+[node name="knight" type="AnimatedSprite2D" parent="."]
+position = Vector2(79, 125)
+sprite_frames = SubResource("SpriteFrames_boahu")
+autoplay = "default"
+frame_progress = 0.714537
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2(160, 90)
+zoom = Vector2(2, 2)
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="controls_container" type="PanelContainer" parent="ui"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="vbox" type="VBoxContainer" parent="ui/controls_container"]
+layout_mode = 2
+
+[node name="shader_toggle" type="CheckButton" parent="ui/controls_container/vbox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Shader active"
+
+[node name="scanline_strength_title" type="Label" parent="ui/controls_container/vbox"]
+layout_mode = 2
+text = "Scanline Strength"
+horizontal_alignment = 1
+
+[node name="scanline_strength_slider" type="HSlider" parent="ui/controls_container/vbox"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="aberration_strength_title" type="Label" parent="ui/controls_container/vbox"]
+layout_mode = 2
+text = "Aberration Amount"
+horizontal_alignment = 1
+
+[node name="aberration_strength_slider" type="HSlider" parent="ui/controls_container/vbox"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 2.0
+step = 0.01
+
+[node name="vignette_strength_title" type="Label" parent="ui/controls_container/vbox"]
+layout_mode = 2
+text = "Vignette Strength"
+horizontal_alignment = 1
+
+[node name="vignette_strength_slider" type="HSlider" parent="ui/controls_container/vbox"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="noise_strength_title" type="Label" parent="ui/controls_container/vbox"]
+layout_mode = 2
+text = "Noise Strength"
+horizontal_alignment = 1
+
+[node name="noise_strength_slider" type="HSlider" parent="ui/controls_container/vbox"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 0.2
+step = 0.001
+
+[node name="glow_strength_title" type="Label" parent="ui/controls_container/vbox"]
+layout_mode = 2
+text = "Glow Strength"
+horizontal_alignment = 1
+
+[node name="glow_strength_slider" type="HSlider" parent="ui/controls_container/vbox"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 5.0
+step = 0.01
+
+[node name="glow_radius_title" type="Label" parent="ui/controls_container/vbox"]
+layout_mode = 2
+text = "Glow Radius"
+horizontal_alignment = 1
+
+[node name="glow_radius_slider" type="HSlider" parent="ui/controls_container/vbox"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 5.0
+rounded = true
+
+[node name="Label" type="Label" parent="ui"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -229.0
+offset_top = -20.0
+offset_right = 229.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "More properties available to edit in the shader params"

@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bquxmbf3rtono"]
+
+[ext_resource type="FontFile" uid="uid://d371wlxub1s4l" path="res://ui/Kenney Mini.ttf" id="1_24ajh"]
+[ext_resource type="Texture2D" uid="uid://dq1bfnle0j517" path="res://ui/panel.png" id="1_piq6u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ja32"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+texture = ExtResource("1_piq6u")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[resource]
+default_font = ExtResource("1_24ajh")
+default_font_size = 16
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_0ja32")
