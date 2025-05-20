@@ -19,4 +19,6 @@ The shader in this repository uses snippets from, and/or is influenced by, other
 
 If you want to know more about the development of the game, I have devlogs you [can read](https://shaggydev.com/2024/09/04/unto-deepest-depths-devlog/) on my site [or watch](https://youtu.be/w6jXgaWHo1s) on YouTube.
 
+I have also open sourced some [early prototype game code](https://github.com/theshaggydev/unto-deepest-depths-prototype).
+
 This code is provided as-is, with no warranty, though feel free to reach out with questions or issues.
